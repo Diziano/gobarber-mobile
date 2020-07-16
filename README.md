@@ -34,8 +34,11 @@
 <br/>
 
 ## :computer: Projeto
-O GoBarber é um aplicativo que permite aos usuários agendar um horário com o seu barbeiro.
-Este é um projeto de próposito didático que está sendo desenvolvido durante o Bootcamp GoStack 11 da [Rocketseat](https://rocketseat.com.br/). Este repositório contempla o aplicativo Mobile da aplicação. Confira a aplicação Web e a API nos links abaixo:
+O GoBarber é um aplicativo de agendamento para barbearias.
+Os clientes podem visualizar os horários disponíveis e agendar serviços com seu profissional favorito através do aplicativo.
+O profissional, através do site pode visualizar todos os seus próximos agendamentos e horários livres.
+
+Este é um projeto de próposito didático que foi desenvolvido durante o Bootcamp GoStack da [Rocketseat](https://rocketseat.com.br/). Este repositório contempla o aplicativo Mobile da aplicação. Confira a aplicação Web e a API nos links abaixo:
 - [GoBarber Web](https://github.com/Diziano/gobarber-web/)
 - [GoBarber API](https://github.com/Diziano/gobarber-api/)
 
@@ -48,6 +51,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React Native](https://github.com/facebook/react-native)
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [styled-components](https://github.com/styled-components/styled-components)
+- [unform](https://github.com/Rocketseat/unform)
+- [Yup](https://github.com/jquense/yup)
 - [axios](https://github.com/axios/axios)
 - [ESLint](https://github.com/eslint/eslint)
 - [Prettier](https://github.com/prettier/prettier)
