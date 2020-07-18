@@ -13,6 +13,7 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import Icon from 'react-native-vector-icons/Feather';
 import ImagePicker from 'react-native-image-picker';
+import { Image } from 'react-native';
 
 import api from '../../services/api';
 
@@ -29,6 +30,8 @@ import {
   UserAvatar,
 } from './styles';
 import { useAuth } from '../../hooks/auth';
+
+import placeholder from '../../assets/placeholder.png';
 
 interface ProfileFormData {
   name: string;
@@ -150,8 +153,8 @@ const SignUp: React.FC = () => {
           uri: response.uri,
         });
 
-        api.patch('users/avatar', data).then(apiResponse => {
-          updateUser(apiResponse.data)
+        api.patch('users/avatar', data).then((apiResponse) => {
+          updateUser(apiResponse.data);
         });
       },
     );
@@ -178,7 +181,13 @@ const SignUp: React.FC = () => {
             </BackButton>
 
             <UserAvatarButton onPress={handleUpdateAvatar}>
-              <UserAvatar source={{ uri: user.avatar_url }} />
+              <UserAvatar
+                source={{
+                  uri:
+                    user.avatar_url ||
+                    Image.resolveAssetSource(placeholder).uri,
+                }}
+              />
             </UserAvatarButton>
 
             <View>

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Image } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
@@ -21,6 +22,8 @@ import {
   ProviderMeta,
   ProviderMetaText,
 } from './styles';
+
+import placeholder from '../../assets/placeholder.png';
 
 export interface Provider {
   id: string;
@@ -60,7 +63,11 @@ const Dashboard: React.FC = () => {
         </HeaderTitle>
 
         <ProfileButton onPress={navigateToProfile}>
-          <UserAvatar source={{ uri: user.avatar_url }} />
+          <UserAvatar
+            source={{
+              uri: user.avatar_url || Image.resolveAssetSource(placeholder).uri,
+            }}
+          />
         </ProfileButton>
       </Header>
 
