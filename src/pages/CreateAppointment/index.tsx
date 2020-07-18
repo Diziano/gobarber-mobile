@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
+import { Image } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 import { Platform, Alert } from 'react-native';
@@ -33,6 +34,8 @@ import {
   CreateAppointmentButton,
   CreateAppointmentButtonText,
 } from './styles';
+
+import placeholder from '../../assets/placeholder.png';
 
 interface RouteParams {
   providerId: string;
@@ -168,7 +171,11 @@ const CreateAppointment: React.FC = () => {
 
         <HeaderTitle>Cabeleireiros</HeaderTitle>
 
-        <UserAvatar source={{ uri: user.avatar_url }} />
+        <UserAvatar
+          source={{
+            uri: user.avatar_url || Image.resolveAssetSource(placeholder).uri,
+          }}
+        />
       </Header>
 
       <Content>
