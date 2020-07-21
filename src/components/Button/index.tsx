@@ -5,11 +5,13 @@ import { Container, ButtonText } from './styles';
 
 interface ButtonProps extends RectButtonProperties {
   children: string;
+  backgroundColor?: string;
+  style?: {};
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
+const Button: React.FC<ButtonProps> = ({ children, style, ...rest }) => (
   <Container {...rest}>
-    <ButtonText>{children}</ButtonText>
+    <ButtonText style={style}>{children}</ButtonText>
   </Container>
 );
 
