@@ -25,6 +25,7 @@ import Button from '../../components/Button';
 import {
   Container,
   BackButton,
+  BackButtonText,
   Title,
   UserAvatarButton,
   UserAvatar,
@@ -164,6 +165,12 @@ const SignUp: React.FC = () => {
     navigation.goBack();
   }, [navigation]);
 
+  const { signOut } = useAuth();
+
+  const handleLogout = useCallback(() => {
+    signOut();
+  }, [signOut]);
+
   return (
     <>
       <KeyboardAvoidingView
@@ -171,13 +178,11 @@ const SignUp: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}
-        >
+        <ScrollView keyboardShouldPersistTaps="handled">
           <Container>
             <BackButton onPress={handleGoBack}>
               <Icon name="chevron-left" size={24} color="#999591" />
+              <BackButtonText>Voltar</BackButtonText>
             </BackButton>
 
             <UserAvatarButton onPress={handleUpdateAvatar}>
@@ -264,6 +269,14 @@ const SignUp: React.FC = () => {
                 }}
               >
                 Confirmar mudanças
+              </Button>
+
+              <Button
+                backgroundColor="#3e3b47"
+                style={{ color: '#f4ede8' }}
+                onPress={handleLogout}
+              >
+                Sair da conta
               </Button>
             </Form>
           </Container>

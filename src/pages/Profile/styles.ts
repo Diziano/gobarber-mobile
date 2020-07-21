@@ -16,11 +16,19 @@ export const Title = styled.Text`
 `;
 
 export const BackButton = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-top: 40px;
 `;
 
+export const BackButtonText = styled.Text`
+  font-size: 18px;
+  color: #999591;
+`;
+
 export const UserAvatarButton = styled.TouchableOpacity`
-  margin-top: 32px;
+  margin-top: 0px;
 `;
 
 export const UserAvatar = styled.Image`
