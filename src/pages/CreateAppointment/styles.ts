@@ -36,12 +36,15 @@ export const Header = styled.View`
 `;
 
 export const BackButton = styled.TouchableOpacity``;
+
 export const HeaderTitle = styled.Text`
   color: #f5ede8;
   font-family: 'RobotoSlab-Medium';
   font-size: 20px;
   margin-left: 16px;
 `;
+
+export const ProfileButton = styled.TouchableOpacity``;
 
 export const UserAvatar = styled.Image`
   width: 56px;

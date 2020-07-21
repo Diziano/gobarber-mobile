@@ -14,6 +14,7 @@ import {
   Header,
   BackButton,
   HeaderTitle,
+  ProfileButton,
   UserAvatar,
   Content,
   ProvidersListContainer,
@@ -67,6 +68,10 @@ const CreateAppointment: React.FC = () => {
   const [selectedProvider, setSelectedProvider] = useState(
     routeParams.providerId,
   );
+
+  const navigateToProfile = useCallback(() => {
+    navigate('Profile');
+  }, [navigate]);
 
   useEffect(() => {
     api.get('providers').then((response) => {
@@ -171,11 +176,13 @@ const CreateAppointment: React.FC = () => {
 
         <HeaderTitle>Cabeleireiros</HeaderTitle>
 
-        <UserAvatar
-          source={{
-            uri: user.avatar_url || Image.resolveAssetSource(placeholder).uri,
-          }}
-        />
+        <ProfileButton onPress={navigateToProfile}>
+          <UserAvatar
+            source={{
+              uri: user.avatar_url || Image.resolveAssetSource(placeholder).uri,
+            }}
+          />
+        </ProfileButton>
       </Header>
 
       <Content>
